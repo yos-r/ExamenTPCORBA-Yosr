@@ -1,0 +1,17 @@
+module Contrat {
+    typedef sequence<string> StringSequence; 
+
+    interface Etudiant {
+        void Ajouter_une_epreuve(in string nom, in double note, in double coefficient);
+        StringSequence Liste_des_epreuves();
+        StringSequence Liste_des_livres();
+        double Calculer_la_moyenne();
+        void Emprunter_un_livre(in string nom, in string auteur, in string collection, in string datePublication);
+    };
+
+    interface Promotion {
+        void ajouter_un_etudiant(in string nom, in string prenom, in long numero);
+        Etudiant rechercher_un_etudiant(in long numero);
+        double calculer_moyenne_de_la_promotion();
+    };
+};
